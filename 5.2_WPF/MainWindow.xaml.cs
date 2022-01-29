@@ -59,36 +59,13 @@ namespace _5._2_WPF
             if (open_file_dialog.ShowDialog() == true)
             {
                 image.Source = new BitmapImage(new Uri(open_file_dialog.FileName, UriKind.Absolute));
-                //string file_name = open_file_dialog.FileName;
-                //BitmapImage bitmap = new BitmapImage();
-                //bitmap.BeginInit();
-                //bitmap.UriSource = new Uri(file_name);
-                //bitmap.EndInit();
-                //image.Source = bitmap;
             }
         }
 
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
-            //SaveFileDialog save_file_dialog = new SaveFileDialog();
-            //save_file_dialog.Filter = "PNG (*.png)|*.png|Все файлы (*.*)|*.*";
-            //if (save_file_dialog.ShowDialog() == true)
-            //{
-            //    string file_name = save_file_dialog.FileName;
-            //    int margin = (int)this.ink_canvas.Margin.Left;
-            //    int width = (int)this.ink_canvas.ActualWidth - margin;
-            //    int height = (int)this.ink_canvas.ActualHeight - margin;
-            //    RenderTargetBitmap rtb = new RenderTargetBitmap(width, height, 96d, 96d, PixelFormats.Default);
-            //    rtb.Render(ink_canvas);
-
-            //    using (FileStream fs = new FileStream(file_name, FileMode.Create))
-            //    {
-            //        BmpBitmapEncoder bbe = new BmpBitmapEncoder();
-            //        bbe.Frames.Add(BitmapFrame.Create(rtb));
-            //        bbe.Save(fs);
-            //    }
-            //}
-
+            // Код взят с сайта:
+            // https://andrey.moveax.ru/post/wpf-rendertargetbitmap
 
             var pSource = PresentationSource.FromVisual(Application.Current.MainWindow);
             Matrix m = pSource.CompositionTarget.TransformToDevice;
